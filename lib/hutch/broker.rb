@@ -147,7 +147,7 @@ module Hutch
 
       with_authentication_error_handler do
         with_connection_error_handler do
-          @api_client = CarrotTop.new(host: api_config.host, port: api_config.port,
+          @api_client = CarrotTop.new(host: api_config.host,
                                       user: api_config.username, password: api_config.password,
                                       ssl: api_config.ssl)
           @api_client.exchanges
@@ -276,7 +276,7 @@ module Hutch
         config.password = @config[:mq_password]
         config.ssl = @config[:mq_api_ssl]
         config.protocol = config.ssl ? "https://" : "http://"
-        config.sanitized_uri = "#{config.protocol}#{config.username}@#{config.host}/"
+        config.sanitized_uri = "#{config.protocol}#{config.username}@mq/"
       end
     end
 
