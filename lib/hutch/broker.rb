@@ -276,7 +276,7 @@ module Hutch
         config.password = @config[:mq_password]
         config.ssl = @config[:mq_api_ssl]
         config.protocol = config.ssl ? "https://" : "http://"
-        config.sanitized_uri = "#{config.protocol}#{config.username}@#{config.host}:#{config.port}/"
+        config.sanitized_uri = "#{config.protocol}#{config.username}@#{config.host}/"
       end
     end
 
